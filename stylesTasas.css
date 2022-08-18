@@ -1,0 +1,405 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'ag_book_roundedmedium';
+    src: url('../fonts/ag_book_rounded_medium-webfont.woff2') format('woff2'),
+        url('../fonts/ag_book_rounded_medium-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'Roboto-Condensed';
+    src: url('../fonts/Roboto-Condensed.woff')format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --primary: #1A137F;
+    --secondary: #F6A117;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+main {
+    width: 100%;
+    margin-right: 0;
+}
+
+.img-nav {
+    height: 60px;
+}
+
+.menu {
+    background-color: var(--primary);
+    height: 70px;
+    top: 0;
+    position: fixed;
+    font-size: 13px;
+    width: 100%;
+}
+
+.menu__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    list-style: none;
+    max-width: 1200px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+.menu__links {
+    list-style: none;
+    height: 100%;
+    margin-bottom: 0;
+    transition: transform .5s;
+    display: flex;
+}
+
+.menu__item {
+    list-style: none;
+    position: relative;
+    height: 100%;
+    --clip: polygon(0 0, 100% 0, 100% 0, 0 0);
+    --transform: rotate(-90deg);
+}
+
+.menu__item:hover {
+    --clip: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+    --transform: rotate(0);
+}
+
+.menu__link {
+    color: #fff;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    padding: 0 30px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+
+.menu__link:hover {
+    background-color: #243589;
+    color: #ffff;
+}
+
+
+.menu__arrow {
+    transform: var(--transform);
+    transition: transform .3s;
+    display: block;
+    margin-left: 3px;
+}
+
+.menu__nesting {
+    list-style: none;
+    transition: clip-path .3s;
+    clip-path: var(--clip);
+    padding-left: 0;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: max-content;
+    transform: translateY(100%);
+    background-color: var(--primary);
+}
+
+.menu__link--inside {
+    padding: 30px 100px 30px 20px;
+}
+
+.menu__link--inside:hover {
+    background-color: #2e59af;
+}
+
+.menu__hamburguer {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    cursor: pointer;
+    display: none;
+}
+
+.container {
+    width: 100%;
+}
+
+.menu__img {
+    display: block;
+    width: 36px;
+}
+
+/*--------------------CUERPO-----------------------*/
+main {
+    display: flex;
+    justify-content: center;
+    padding-top: 70px;
+}
+
+.cuerpo-landing {
+    width: 85%;
+    padding: 0 0 30px 0;
+}
+
+.title-hipotecario {
+    width: max-content;
+    background-color: #F6A117;
+    padding: 10px 38px 20px 38px;
+    line-height: 25px;
+    border-radius: 0 0 23px 23px;
+}
+
+.publicidad-landing {
+    font-family: 'ag_book_roundedmedium';
+    color: var(--primary);
+}
+
+.publicidad-landing .text-title {
+    display: flex;
+    justify-content: center;
+}
+
+.publicidad-landing span {
+    color: #ffff;
+}
+
+.publicidad-landing .img-hipotecario {
+    height: 500px;
+}
+
+.msg-error-alert {
+    color: #ffff;
+    margin-top: 10px;
+    border: none;
+    font-weight: 100;
+    display: none;
+    padding: 10px 15px;
+    border-radius: 3px;
+    background-color: #9e2010;
+}
+.msg-error-alert.activo{
+    display: block;
+}
+.text-confirmacion {
+    padding: 8px 10px;
+    border-radius: 10px;
+    text-align: center;
+    color: #1A137F;
+    background-color: #ffff;
+}
+.text-confirmacion p{
+    margin-bottom: 0;
+}
+
+.cuerpo-form-landing {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cuerpo-form-landing form {
+    margin: 0 20px;
+    width: 100%;
+    color: #ffff;
+    font-family: 'Roboto-Condensed';
+    background-color: var(--primary);
+    padding: 20px;
+    font-size: 17px;
+    border-radius: 15px;
+}
+
+.cuerpo-form-landing .title-form {
+    color: #ffff;
+    text-align: center;
+    font-family: 'ag_book_roundedmedium';
+}
+.active-form{
+    display:none;
+}
+.active-form.activo{
+    display: block;
+}
+.registro-logrado{
+    display: none;
+    padding: 10px 0;
+}
+.registro-logrado.activo{
+   display: block;
+}
+.registro-logrado .content-check div{
+    display: flex;
+    justify-content: center;
+}
+.registro-logrado img{
+    height: 80px;
+}
+.registro-logrado h4{
+    font-family: 'ag_book_roundedmedium';
+}
+.enviar-form-hipotecario {
+    padding: 8px 13px;
+    border: none;
+    border-radius: 5px;
+    color: #ffff;
+    font-family: 'ag_book_roundedmedium';
+    background-color: var(--secondary);
+}
+
+.text-terminos {
+    padding-top: 10px;
+    font-size: 13px;
+}
+
+.text-terminos .link-terminos {
+    color: rgb(214, 214, 214);
+}
+.check-origen{
+    display: none;
+}
+.enviar-form-hipotecario:hover {
+    background-color: #fff;
+    color: var(--secondary);
+    transition: all 0.8s;
+}
+
+/*-------------------FOOTER--------------------  */
+.footer-container {
+    padding: 20px 50px;
+    font-weight: 100;
+}
+
+.text-footer {
+    color: #9c9c9c;
+}
+
+.footer {
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 20px;
+    font-size: 13px;
+    justify-content: space-around;
+}
+
+.divisor-align {
+    display: flex;
+    justify-content: center;
+}
+
+.divisor-footer {
+    width: 100%;
+    border-bottom: 0.5px solid #9c9c9c;
+}
+
+
+
+
+@media (max-width:800px) {
+    .menu {
+        max-width: 100%;
+    }
+
+    .menu__hamburguer {
+        display: flex;
+    }
+
+    .menu__item {
+        --clip: 0;
+        overflow: hidden;
+    }
+
+    .menu__item--active {
+        --transform: rotate(0);
+        --background: #5e7094;
+    }
+
+    .menu__item--show {
+        background-color: #456bb8;
+    }
+
+
+    .menu__links {
+        position: fixed;
+        max-width: 400px;
+        width: 100%;
+        top: 70px;
+        bottom: 0;
+        right: 0;
+        background-color: #2e59af;
+        overflow-y: auto;
+        display: grid;
+        grid-auto-rows: max-content;
+        transform: translateX(100%);
+    }
+
+    .menu__links--show {
+        transform: unset;
+        width: 100%;
+    }
+
+    .menu__link {
+        padding: 25px 0;
+        padding-left: 30px;
+        height: auto;
+    }
+
+    .menu__arrow {
+        margin-left: auto;
+        margin-right: 20px;
+    }
+
+    .menu__nesting {
+        display: grid;
+        position: unset;
+        width: 100%;
+        transform: translateY(0);
+        height: 0;
+        background-color: #456bb8;
+        transition: height .3s;
+    }
+
+    .menu__link--inside {
+        width: 90%;
+        margin-left: auto;
+        border-left: 1px solid #798499;
+    }
+
+    /*--------------------------CUERPO------------------------------------ */
+    .title-hipotecario {
+        padding: 5px 28px 10px 28px;
+    }
+    .publicidad-landing .img-hipotecario {
+        height: 300px;
+    }
+
+    .cuerpo-form-landing form {
+        padding: 20px;
+        margin: 10px 10px;
+    }
+
+    .cuerpo-form-landing form div{
+        padding-bottom: 5px;
+    }
+
+    .cuerpo-landing {
+        width: 100%;
+    }
+
+    /*--------------------------FOOTER------------------------------------ */
+    .text-footer {
+        font-size: 14px;
+    }
+}
